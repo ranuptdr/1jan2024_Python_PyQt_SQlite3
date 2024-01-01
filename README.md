@@ -1,0 +1,2 @@
+# 1jan2024_Python_PyQt_SQlite3
+1jan2024_Python_PyQt_SQlite3
