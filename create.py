@@ -37,6 +37,8 @@ salary_label = QLabel('Salary:')
 salary = QLineEdit()
 
 submit_button = QPushButton('Submit')
+# Set button color using style sheet
+submit_button.setStyleSheet('background-color: green; color: white;')
 
 #1. funtion defination is a one time process
 def myFunction():  # myFunction is writter in camelCase
