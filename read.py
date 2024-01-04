@@ -64,6 +64,8 @@ def showEmployeeSlotFunction():
         for col_num, col_data in enumerate(row_data):
             item = QTableWidgetItem(str(col_data))
             table.setItem(row_num, col_num, item)
+    # set horiontal header to stretch 
+    table.horizontalHeader().setSectionResizedMode(QTableWidget.Streatch)
     table.show()
 pass
 
