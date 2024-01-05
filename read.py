@@ -107,7 +107,6 @@ layout.addWidget(submit_button)
 layout.addWidget(show_employees)
 layout.addWidget(table)
 
-
 # Set up window
 window = QWidget()
 window.setLayout(layout)
