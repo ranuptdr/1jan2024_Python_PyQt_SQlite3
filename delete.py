@@ -56,9 +56,29 @@ def deleteEmployee(row):
     result = confirmation_box.exec()
 
     #check the result 
-    if result == QMessageBox.standardButton.Yes:
-        print("user clickrd yrs , proceed with the action.")
+    if result == QMessageBox.StandardButton.Yes:
+
+        print("user clicked yes , proceed with the action.")
         #Add your action here
+        print(row)
+        print(table.item(row,0).text())
+        delid = table.item(row,0).text()
+        # Build Query
+        print("Before Typecasting")
+        print(delid)
+        print(type(delid))
+        # Typecasting
+        delid = int(delid)
+        print("After Typecasting")
+        print(delid)
+        print(type(delid))
+        print(f"delete  from employees where id={delid}")
+
+        # Execute Query
+        cursor.execute(f"delete  from employees where id={delid}")
+
+        # Commit Query 
+        conn.commit()
     else:
         print("User clicked no, cancel the action ")
 
@@ -98,7 +118,8 @@ def showEmployeeSlotFunction():
         buttons_widget = QWidget()
         buttons_widget.setLayout(button_layout)    
         table.setCellWidget(row_num, len(column_names)-1, buttons_widget)
-        delete_button.clicked.connect(lambda _, row=row_num: deleteEmployee(row))
+                                   # lambda  fa1,    fa2    : expression
+        delete_button.clicked.connect(lambda  _, row=row_num: deleteEmployee(row))
 
     # set horiontal header to stretch 
     table.show()
