@@ -81,6 +81,3 @@ window.setWindowTitle('Employee Form')
 # Show the window
 window.show()
 sys.exit(app.exec())
-
-
-
